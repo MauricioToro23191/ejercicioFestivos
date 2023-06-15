@@ -13,6 +13,7 @@ public class TipoControlador {
     @Autowired
     private ITipoServicio servicio;
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/listar", method = RequestMethod.GET)
     public List<Tipo> listar() {
         return servicio.listar();

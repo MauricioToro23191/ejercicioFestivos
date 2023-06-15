@@ -34,16 +34,21 @@ public class FestivoControlador {
         return matcher.matches();
     }
     //Fin de codigo copiado
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/listar", method = RequestMethod.GET)
     @ResponseBody
     public List<Festivo> listar() {
         return servicio.listar();
     }
 
+
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/listar/{anio}", method = RequestMethod.GET)
     public List<FestivoResponse> listaFestivosxaño(@PathVariable int anio) {
         return servicio.listaFestivosxaño(anio);
     }
+
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/validar/{anio}/{mes}/{dia}", method = RequestMethod.GET)
     public String validadFechaDestivo(@PathVariable int anio,@PathVariable int mes,@PathVariable int dia) {
         //validamos si la fecha es valida antes de hacer peticiones o llamadas a los metodos 

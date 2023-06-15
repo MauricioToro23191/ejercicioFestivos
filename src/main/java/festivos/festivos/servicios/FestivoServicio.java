@@ -25,11 +25,9 @@ public class FestivoServicio implements IFestivoServicio {
 
     @Override
     public String validadFechaDestivo(int anio,int mes,int dia){
-        //se obtiene la lista de festivos del año
         List<FestivoResponse> listafestivos=listaFestivosxaño(anio);
         String fecha=anio+"/"+mes+"/"+dia;
         for (FestivoResponse festivo:listafestivos){
-            //se valida si la fecha ingresada está dentro de la lista de festivos 
             if(fecha.equals(festivo.getFecha())){
                 return "Si es un festivo";
             }
